@@ -1,0 +1,28 @@
+# Compiled Object files
+x64/
+Debug/
+Release/
+*.lib
+*.obj
+*.aps
+
+# Visual Studio cache/options directory
+.vs/
+
+# VSTi header
+pluginterfaces/
+
+# Work files
+*.ini
+*.ncb
+*.suo
+*.sdf
+*.opensdf
+*.user
+*.dmp
+*.*~
+
+# Binary files
+*.dll
+*.exe
+
