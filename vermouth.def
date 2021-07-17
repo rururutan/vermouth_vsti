@@ -1,0 +1,29 @@
+EXPORTS
+	vermouth_Open
+	vermouth_Close
+	vermouth_Write
+	vermouth_ShortMsg
+	vermouth_LongMsg
+	vermouth_Get16
+	vermouth_Get32
+	vermouth_SetParent
+
+	midiout_getver
+	midiout_create
+	midiout_destroy
+	midiout_shortmsg
+	midiout_longmsg
+	midiout_get
+	midiout_get16
+	midiout_get32
+	midiout_setgain
+	midiout_setportb
+
+	midimod_create
+	midimod_destroy
+	midimod_loadprogram
+	midimod_loadrhythm
+	midimod_loadgm
+	midimod_loadall
+	midimod_loadallex
+
