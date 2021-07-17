@@ -80,15 +80,15 @@ bool CVstEditWnd::Create(CVstEffect* pEffect, LPCTSTR lpszWindowName, DWORD dwSt
 		return false;
 	}
 
-	LONG nWidth = CW_USEDEFAULT;
-	LONG nHeight = CW_USEDEFAULT;
+	LONG nWidth = lpRect->right - lpRect->left;
+	LONG nHeight = lpRect->bottom - lpRect->top;
 
 	HWND hWnd = ::CreateWindow(s_szClassName, lpszWindowName, dwStyle, x, y, nWidth, nHeight, NULL, NULL, sm_hInstance, this);
 	if (hWnd == NULL)
 	{
 		return false;
 	}
-	::ShowWindow(hWnd, SW_SHOWNORMAL);
+	::ShowWindow(hWnd, SW_SHOWNA);
 	::UpdateWindow(hWnd);
 
 	m_pEffect = pEffect;
@@ -98,6 +98,16 @@ bool CVstEditWnd::Create(CVstEffect* pEffect, LPCTSTR lpszWindowName, DWORD dwSt
 		Destroy();
 		return false;
 	}
+
+	// editOpenŒã‚Å‚È‚¢‚Æ³í‚È’l‚ð•Ô‚³‚È‚¢VST‘½”‚È‚Ì‚Å”O‚Ìˆ×
+	lpRect = NULL;
+	if ((pEffect->editGetRect(&lpRect)) && (lpRect != NULL))
+	{
+		LONG nWidth = lpRect->right - lpRect->left;
+		LONG nHeight = lpRect->bottom - lpRect->top;
+		OnResize(nWidth, nHeight);
+	}
+
 	return true;
 }
 
