@@ -137,8 +137,8 @@ void CComMidiOutVst::Process16(SINT16* lpBuffer, UINT nBufferCount)
 			lpBuffer[0] = static_cast<SINT16>(l * m_fVol - 0.5f);
 
 			float r = output[1][m_nIndex];
-			r = min(l, 1.0f);
-			r = max(l, -1.0f);
+			r = min(r, 1.0f);
+			r = max(r, -1.0f);
 			lpBuffer[1] = static_cast<SINT16>(r * m_fVol - 0.5f);
 			lpBuffer += 2;
 			m_nIndex++;
